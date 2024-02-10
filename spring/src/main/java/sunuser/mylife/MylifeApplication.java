@@ -26,10 +26,10 @@ public class MylifeApplication {
 		return args -> {
 			User user = new User("cdawg", encoder.encode("123"));
 			repo.save(user);
-			Post post = new Post("https://as2.ftcdn.net/v2/jpg/05/79/31/57/1000_F_579315701_sXazttRoHiBEe6L4Z9sqCnxb8R0xlX2v.jpg", "some mock data of post", user);
+			Post post = new Post("https://a-z-animals.com/media/2023/10/shutterstock_2302936149.jpg", "some mock data of post", user);
 			Prepo.save(post);
-			PostComment comment = new PostComment(user, post, "as always great");
-			PostComment comment2 = new PostComment(user, post, "great day");
+			PostComment comment = new PostComment(user, post, "comment1");
+			PostComment comment2 = new PostComment(user, post, "comment2");
 			crepo.save(comment);
 			crepo.save(comment2);
 		};

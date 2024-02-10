@@ -58,7 +58,7 @@ public class PostService {
 	}
 
 	public List<PostDTO> getUsersPost(String username) {
-		User user = userRepo.findByUsername(username);
+		User user = userRepo.findByUsername(username).orElse(null);
 
 		return postRepo.getAllPostByUsername(username, user.getId());
 	}

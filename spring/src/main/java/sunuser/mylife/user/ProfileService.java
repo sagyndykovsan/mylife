@@ -66,7 +66,7 @@ public class ProfileService {
 
 	@Transactional
 	public String followUser(String username, User user) {
-		User userToFollow = userRepository.findByUsername(username);
+		User userToFollow = userRepository.findByUsername(username).orElse(null);
 		userToFollow.follow(user);
 
 		userRepository.save(userToFollow);

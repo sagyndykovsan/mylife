@@ -45,7 +45,7 @@ public class SecurityConfig {
     @Bean
     public UserDetailsService userDetailsService(UserRepository userRep) {
         return username -> {
-            User user = userRep.findByUsername(username);
+            User user = userRep.findByUsername(username).orElse(null);
             if (username != null) return user;
 
             throw new UsernameNotFoundException("User '" + username + "' not found");

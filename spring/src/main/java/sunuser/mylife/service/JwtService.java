@@ -33,6 +33,10 @@ public class JwtService {
         return extractClaim(token, Claims::getExpiration);
     }
 
+    public String extractSubject(String token) {
+        return extractClaim(token, Claims::getSubject);
+    }
+
     public boolean isTokenValid(String token) {
         return !extractExpiration(token).before(new Date());
     }
